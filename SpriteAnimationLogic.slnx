@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="SpriteAnimationLogic/SpriteAnimationLogic.vcxproj" Id="198bc55c-8a36-4794-b10e-d3265f2065f8" />
+</Solution>
