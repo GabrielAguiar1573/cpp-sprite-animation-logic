@@ -1,14 +1,21 @@
 #include "Animacao.h"
 #include <iostream>
-#include <vector>
 
 int main() {
 	Animacao animacao(4, 0.5);
 
-	std::vector <float> deltas = {0.2, 0.3, 1.2, 2.1};
+	animacao.Update(0.5);
+	std::cout << animacao.FrameAtual() << " | Pausada: " << animacao.EstaPausada() << std::endl;
 
-	for (float delta : deltas) {
-		animacao.Update(delta);
-		std::cout << animacao.FrameAtual() << std::endl;
-	}
+	animacao.Pausar();
+	std::cout << animacao.FrameAtual() << " | Pausada: " << animacao.EstaPausada() << std::endl;
+
+	animacao.Update(1.0);
+	std::cout << animacao.FrameAtual() << " | Pausada: " << animacao.EstaPausada() << std::endl;
+
+	animacao.Retomar();
+	std::cout << animacao.FrameAtual() << " | Pausada: " << animacao.EstaPausada() << std::endl;
+
+	animacao.Update(0.5);
+	std::cout << animacao.FrameAtual() << " | Pausada: " << animacao.EstaPausada() << std::endl;
 }

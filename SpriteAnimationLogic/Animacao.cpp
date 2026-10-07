@@ -6,6 +6,10 @@ Animacao::Animacao(int quantidadeFramesAnimacao, float tempoPorFrameAnimacao) {
 }
 
 void Animacao::Update(float delta) {
+	if (pausada) {
+		return;
+	}
+
 	tempoAcumulado += delta;
 	while (tempoAcumulado >= tempoPorFrame) {
 		frameAtual++;
@@ -16,6 +20,18 @@ void Animacao::Update(float delta) {
 
 		tempoAcumulado -= tempoPorFrame;
 	}
+}
+
+bool Animacao::EstaPausada() {
+	return pausada;
+}
+
+void Animacao::Pausar() {
+	pausada = true;
+}
+
+void Animacao::Retomar() {
+	pausada = false;
 }
 
 int Animacao::FrameAtual() {
